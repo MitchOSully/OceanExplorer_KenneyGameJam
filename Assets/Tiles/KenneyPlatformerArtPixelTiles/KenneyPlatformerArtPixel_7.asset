@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KenneyPlatformerArtPixel_7
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1479102082, guid: 3a53a06e1926b334aa17760b97b5772e, type: 3}
-  m_Color: {r: 1, g: 0.9843137, b: 0.69411767, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0

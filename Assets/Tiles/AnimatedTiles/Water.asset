@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: WaterTop
+  m_Name: Water
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 931780109, guid: 3a53a06e1926b334aa17760b97b5772e, type: 3}
-  - {fileID: 21300000, guid: bcc259dfdadcbc646bafa9d0f61b178c, type: 3}
+  - {fileID: -1100495333, guid: 3a53a06e1926b334aa17760b97b5772e, type: 3}
+  - {fileID: 21300000, guid: 97444ca83e0adc146aaf849235f25f64, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
