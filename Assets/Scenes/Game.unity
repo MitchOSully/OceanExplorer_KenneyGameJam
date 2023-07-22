@@ -337,6 +337,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prompt: {fileID: 1677521917}
+  m_action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1007934198}
+        m_TargetAssemblyTypeName: CGameManager, Assembly-CSharp
+        m_MethodName: GoToBed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &136890735
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1595,6 +1610,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prompt: {fileID: 169652571}
+  m_action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1007934198}
+        m_TargetAssemblyTypeName: CGameManager, Assembly-CSharp
+        m_MethodName: TalkToDad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &279588328
 GameObject:
   m_ObjectHideFlags: 0

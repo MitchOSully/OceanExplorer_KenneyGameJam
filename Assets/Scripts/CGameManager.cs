@@ -47,8 +47,7 @@ public class CGameManager : MonoBehaviour
         //Check for restarting
         if (Input.GetKeyUp(KeyCode.R))
         {
-            //m_player.transform.position = new Vector3(0.64f, -1.36f, 0); //On the jetty
-            m_player.transform.position = new Vector3(-10.2f, -1.559f, 0); //Next to dad
+            RestartPosition();
             m_playerControllerLand.enabled = true;
             m_playerControllerWater.enabled = false;
             RestartTime();
@@ -75,14 +74,39 @@ public class CGameManager : MonoBehaviour
         }
     }
 
-    public void RestartTime()
+    public void GoToBed()
+    {
+        //1. Turn off controls
+        m_playerControllerLand.enabled = false;
+        //2. Turn player to face door
+        //3. Fade scene to black
+        //4. Restart time
+        RestartTime();
+        //5. Put player back in starting position
+        RestartPosition();
+        //6. Turn controls back on
+        m_playerControllerLand.enabled = true;
+    }
+
+    public void TalkToDad()
+    {
+        Debug.Log("Talking to dad");
+    }
+
+    /// /////////////////////////PRIVATES////////////////////////////////
+
+    private void RestartTime()
     {
         m_fTimer = 0;
         m_darkness.color = new Color(0, 0, 0, 0);
         m_clockImage.sprite = m_oclock12;
     }
 
-    /// /////////////////////////PRIVATES////////////////////////////////
+    private void RestartPosition()
+    {
+        //m_player.transform.position = new Vector3(0.64f, -1.36f, 0); //On the jetty
+        m_player.transform.position = new Vector3(-10.2f, -1.559f, 0); //Next to dad
+    }
 
     private void UpdateClock()
     {
