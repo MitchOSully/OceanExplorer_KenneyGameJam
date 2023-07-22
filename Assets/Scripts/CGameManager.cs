@@ -5,6 +5,8 @@ using UnityEngine;
 public class CGameManager : MonoBehaviour
 {
     public GameObject m_player;
+
+    private int m_iScore = 0;
     
     private TarodevController.PlayerController      m_playerControllerLand;
     private TarodevController.PlayerControllerWater m_playerControllerWater;
@@ -24,5 +26,14 @@ public class CGameManager : MonoBehaviour
             m_playerControllerLand.enabled = true;
             m_playerControllerWater.enabled = false;
         }
+    }
+
+    public int GetScore()
+    {
+        return m_iScore;
+    }
+    public void IncreaseScore(int iInc = 1)
+    {
+        m_iScore += iInc;
     }
 }
