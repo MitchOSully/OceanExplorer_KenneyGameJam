@@ -13,4 +13,12 @@ public class CKillPlayerOnTrigger : MonoBehaviour
             m_gameManager.KillPlayer();
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "SkryperBoundary")
+        {
+            gameObject.transform.position -= new Vector3(0, 0.1f, 0);
+        }
+    }
 }
