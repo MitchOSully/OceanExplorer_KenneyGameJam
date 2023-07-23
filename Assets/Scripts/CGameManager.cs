@@ -31,6 +31,9 @@ public class CGameManager : MonoBehaviour
 
     public CDialogue[] m_dadDialogues;
 
+    [System.NonSerialized]
+    public bool m_bTimePaused = false;
+
     /// ////////////////PRIVATES//////////////////////////
 
     private TarodevController.PlayerController m_playerControllerLand;
@@ -66,26 +69,28 @@ public class CGameManager : MonoBehaviour
     {
         ////////////////////////DEBUG ONLY////////////////////////////////
         //Check for restarting
-        if (Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             RespawnPlayer();
             m_playerControllerLand.enabled = true;
             m_playerControllerWater.enabled = false;
             RestartTime();
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.X))
         {
             SpawnSkrypers(10, 10);
         }
         ////////////////////////DEBUG ONLY////////////////////////////////
 
-        //Update clock
-        m_fTimer += Time.deltaTime;
-        UpdateClock();
-        DarkenScene();
-        if (m_fTimer > m_fDayLength && !m_bSkrypersActive)
+        if (!m_bTimePaused)
         {
-            SpawnSkrypers(10, 10);
+            m_fTimer += Time.deltaTime;
+            UpdateClock();
+            DarkenScene();
+            if (m_fTimer > m_fDayLength && !m_bSkrypersActive)
+            {
+                SpawnSkrypers(10, 10);
+            }
         }
     }
 
@@ -111,6 +116,7 @@ public class CGameManager : MonoBehaviour
 
     public void TalkToDad()
     {
+        m_bTimePaused = true;
         DisableControls();
         if (m_iScore == m_treasures.Length)
         {
@@ -124,6 +130,7 @@ public class CGameManager : MonoBehaviour
 
     public void FinishTalking()
     {
+        m_bTimePaused = false;
         if (m_iScore == m_treasures.Length)
         {
             GameOver(m_sGameOverWinMsg);
