@@ -38,7 +38,7 @@ public class CGameManager : MonoBehaviour
     private float m_fTimer = 0;
     private bool m_bGoingToBed = false;
 
-    private GameObject[] m_skrypers;
+    private GameObject[] m_skrypers = new GameObject[0];
     private bool m_bSkrypersActive = false;
 
     private string m_sGameOverDeathMsg = "You stayed out too late and became fish food. Your father will be heartbroken.";
