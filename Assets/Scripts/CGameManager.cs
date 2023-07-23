@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using Pathfinding;
 
@@ -20,6 +21,8 @@ public class CGameManager : MonoBehaviour
     public float m_fMaxDarkness = 0.7f; //Alpha component of the black panel infront of camera come nighttime. Between 0 and 1
     
     public GameObject m_skryperPrefab;
+
+    public GameObject m_gameOverPanel;
 
     public GameObject m_allTreasuresFoundMessage;
 
@@ -109,6 +112,19 @@ public class CGameManager : MonoBehaviour
         m_player.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
         m_playerControllerLand.enabled = false;
         m_playerControllerWater.enabled = false;
+
+        m_gameOverPanel.SetActive(true);
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("Exiting game");
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     /// /////////////////////////PRIVATES////////////////////////////////
