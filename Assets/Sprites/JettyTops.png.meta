@@ -338,8 +338,8 @@ TextureImporter:
       name: JettyTops_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 69
+        y: 23
         width: 21
         height: 21
       alignment: 0
@@ -359,7 +359,7 @@ TextureImporter:
       name: JettyTops_12
       rect:
         serializedVersion: 2
-        x: 23
+        x: 0
         y: 0
         width: 21
         height: 21
@@ -372,6 +372,27 @@ TextureImporter:
       bones: []
       spriteID: 9ae29650482a0374f836f9b7535a1e41
       internalID: 985515295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JettyTops_13
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06655fb8d1700b46b50d05d52435a41
+      internalID: 1001981425
       vertices: []
       indices: 
       edges: []
@@ -390,6 +411,7 @@ TextureImporter:
       JettyTops_9: 741952987
       JettyTops_10: -215132511
       JettyTops_4: -398519329
+      JettyTops_13: 1001981425
       JettyTops_12: 985515295
       JettyTops_6: -1282791638
       JettyTops_5: -124980658

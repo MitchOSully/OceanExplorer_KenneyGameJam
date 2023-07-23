@@ -218,6 +218,7 @@ SpriteAtlas:
   - {fileID: 570041162, guid: 262aa1b9b2ef2634aa7b905d21d11b76, type: 3}
   - {fileID: 1501726045, guid: 262aa1b9b2ef2634aa7b905d21d11b76, type: 3}
   - {fileID: -18904578, guid: 262aa1b9b2ef2634aa7b905d21d11b76, type: 3}
+  - {fileID: 1001981425, guid: 81dcff4dc09275e4d93752387a9281ac, type: 3}
   - {fileID: 985515295, guid: 81dcff4dc09275e4d93752387a9281ac, type: 3}
   - {fileID: -1695384433, guid: 81dcff4dc09275e4d93752387a9281ac, type: 3}
   - {fileID: -215132511, guid: 81dcff4dc09275e4d93752387a9281ac, type: 3}
@@ -1258,6 +1259,7 @@ SpriteAtlas:
   - Clocks_2
   - Clocks_1
   - Clocks_0
+  - JettyTops_13
   - JettyTops_12
   - JettyTops_11
   - JettyTops_10
