@@ -23,6 +23,7 @@ public class CGameManager : MonoBehaviour
     public GameObject m_skryperPrefab;
 
     public GameObject m_gameOverPanel;
+    public TextMeshProUGUI m_gameOverText;
 
     public GameObject m_allTreasuresFoundMessage;
 
@@ -39,6 +40,9 @@ public class CGameManager : MonoBehaviour
 
     private GameObject[] m_skrypers;
     private bool m_bSkrypersActive = false;
+
+    private string m_sGameOverDeathMsg = "You stayed out too late and became fish food. Your father will be heartbroken.";
+    private string m_sGameOverWinMsg = "Congratulations! Thanks to your aquatic ventures, Seaside Joe will stay in business. Your father is proud.";
 
     private void Start()
     {
@@ -104,16 +108,17 @@ public class CGameManager : MonoBehaviour
     public void TalkToDad()
     {
         Debug.Log("Talking to dad");
+        if (m_iScore == m_treasures.Length)
+        {
+            GameOver(m_sGameOverWinMsg);
+        }
     }
 
     public void KillPlayer()
     {
         m_player.GetComponent<SpriteRenderer>().sprite = m_deadPlayerSprite;
         m_player.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
-        m_playerControllerLand.enabled = false;
-        m_playerControllerWater.enabled = false;
-
-        m_gameOverPanel.SetActive(true);
+        GameOver(m_sGameOverDeathMsg);
     }
 
     public void ExitGame()
@@ -281,5 +286,14 @@ public class CGameManager : MonoBehaviour
 
         string sMsg = "You found the last treasure! Take it back to Seaside Joe and save the shop!";
         messagePanel.GetComponent<CButtonFadeDisplay>().Display(sMsg);
+    }
+
+    private void GameOver(string sMsg)
+    {
+        m_playerControllerLand.enabled = false;
+        m_playerControllerWater.enabled = false;
+
+        m_gameOverText.SetText(sMsg);
+        m_gameOverPanel.SetActive(true);
     }
 }
