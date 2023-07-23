@@ -10,6 +10,8 @@ public class CGameManager : MonoBehaviour
 {
     public GameObject m_player;
     public GameObject m_canvas;
+    public GameObject m_dialogManager;
+
     public Sprite m_alivePlayerSprite, m_deadPlayerSprite;
 
     public TextMeshProUGUI m_scoreText;
@@ -19,7 +21,7 @@ public class CGameManager : MonoBehaviour
     public Sprite m_oclock12, m_oclock130, m_oclock3, m_oclock430, m_oclock6, m_oclock730, m_oclock9, m_oclock1030;
     public SpriteRenderer m_darkness;
     public float m_fMaxDarkness = 0.7f; //Alpha component of the black panel infront of camera come nighttime. Between 0 and 1
-    
+
     public GameObject m_skryperPrefab;
 
     public GameObject m_gameOverPanel;
@@ -105,13 +107,22 @@ public class CGameManager : MonoBehaviour
         StartCoroutine(GoToBed(1, 0.5f, 0.25f));
     }
 
-    public void TalkToDad()
+    public void TalkToDad(CDialogue dialogue)
     {
-        Debug.Log("Talking to dad");
+        DisableControls();
         if (m_iScore == m_treasures.Length)
         {
             GameOver(m_sGameOverWinMsg);
         }
+        else
+        {
+            m_dialogManager.GetComponent<CDialogueManager>().StartDialogue(dialogue);
+        }
+    }
+
+    public void FinishTalking()
+    {
+        EnableLandControls();
     }
 
     public void KillPlayer()
@@ -134,10 +145,26 @@ public class CGameManager : MonoBehaviour
 
     /// /////////////////////////PRIVATES////////////////////////////////
 
+    private void DisableControls()
+    {
+        m_playerControllerLand.enabled = false;
+        m_playerControllerWater.enabled = false;
+    }
+    private void EnableLandControls()
+    {
+        m_playerControllerLand.enabled = true;
+        m_playerControllerWater.enabled = false;
+    }
+    private void EnableWaterControls()
+    {
+        m_playerControllerWater.enabled = true;
+        m_playerControllerLand.enabled = false;
+    }
+
     private IEnumerator GoToBed(float fFadeOutTime, float fBlackTime, float fFadeInTime)
     {
         //1. Turn off controls
-        m_playerControllerLand.enabled = false;
+        DisableControls();
         //2. Turn player to face door
         //3. Fade scene to black
         Color OGColor = m_darkness.color;
@@ -165,7 +192,7 @@ public class CGameManager : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
         //9. Turn controls back on
-        m_playerControllerLand.enabled = true;
+        EnableLandControls();
 
         m_bGoingToBed = false;
     }
@@ -290,8 +317,7 @@ public class CGameManager : MonoBehaviour
 
     private void GameOver(string sMsg)
     {
-        m_playerControllerLand.enabled = false;
-        m_playerControllerWater.enabled = false;
+        DisableControls();
 
         m_gameOverText.SetText(sMsg);
         m_gameOverPanel.SetActive(true);

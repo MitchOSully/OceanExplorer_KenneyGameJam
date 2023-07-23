@@ -7,6 +7,8 @@ public class CPromptWhileInTrigger : MonoBehaviour
 {
     public GameObject m_prompt;
     public UnityEvent m_action;
+    [System.NonSerialized]
+    public bool m_bDialogueActive = false;
 
     private bool m_bInsideTrigger = false;
 
@@ -38,7 +40,7 @@ public class CPromptWhileInTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (m_bInsideTrigger && Input.GetKeyUp(KeyCode.E))
+        if (m_bInsideTrigger && !m_bDialogueActive && Input.GetKeyUp(KeyCode.E))
         {
             m_action.Invoke();
         }
