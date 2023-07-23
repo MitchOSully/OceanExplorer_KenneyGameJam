@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 820815887375394326}
   - component: {fileID: 820815887375394325}
   - component: {fileID: 820815887375394324}
+  - component: {fileID: 3912928273036780700}
   m_Layer: 0
   m_Name: SkryperGFX
   m_TagString: Untagged
@@ -98,6 +99,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_aiPath: {fileID: 820815887804997543}
+--- !u!95 &3912928273036780700
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820815887375394327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddc3bd6fba7a9404d90b1545d986e95c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &820815887804997536
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +201,7 @@ MonoBehaviour:
   radius: 0.62
   height: 0.01
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 6
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2

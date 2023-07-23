@@ -18,7 +18,7 @@ public class CKillPlayerOnTrigger : MonoBehaviour
     {
         if (collision.gameObject.name == "SkryperBoundary")
         {
-            gameObject.transform.position -= new Vector3(0, 0.1f, 0);
+            gameObject.transform.position -= new Vector3(0, 0.4f, 0);
         }
     }
 }

@@ -12,8 +12,6 @@ public class CGameManager : MonoBehaviour
     public GameObject m_canvas;
     public GameObject m_dialogManager;
 
-    public Sprite m_alivePlayerSprite, m_deadPlayerSprite, m_talkingPlayerSprite;
-
     public TextMeshProUGUI m_scoreText;
 
     public Image m_clockImage;
@@ -113,7 +111,7 @@ public class CGameManager : MonoBehaviour
     public void TalkToDad()
     {
         m_bTimePaused = true;
-        m_player.GetComponent<SpriteRenderer>().sprite = m_talkingPlayerSprite;
+        m_player.GetComponent<CPlayerAnimator>().m_bIsTalking = true;
         DisableControls();
         if (m_iScore == m_treasures.Length)
         {
@@ -139,12 +137,12 @@ public class CGameManager : MonoBehaviour
         {
             EnableLandControls();
         }
-        m_player.GetComponent<SpriteRenderer>().sprite = m_alivePlayerSprite;
+        m_player.GetComponent<CPlayerAnimator>().m_bIsTalking = false;
     }
 
     public void KillPlayer()
     {
-        m_player.GetComponent<SpriteRenderer>().sprite = m_deadPlayerSprite;
+        m_player.GetComponent<CPlayerAnimator>().m_bIsDead = true;
         m_player.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
         GameOver(m_sGameOverDeathMsg);
     }
@@ -238,7 +236,7 @@ public class CGameManager : MonoBehaviour
         m_player.transform.position = new Vector3(-12.03f, -1.559f, 0); //Next to dad
         m_player.transform.rotation = Quaternion.identity;
 
-        m_player.GetComponent<SpriteRenderer>().sprite = m_alivePlayerSprite;
+        m_player.GetComponent<CPlayerAnimator>().m_bIsDead = false;
         m_player.GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 
@@ -246,7 +244,6 @@ public class CGameManager : MonoBehaviour
     {
         if (m_fTimer > m_fDayLength * 8 / 8)
         {
-            Debug.Log("Nighttime");
             m_clockImage.sprite = m_oclock12;
         }
         else if (m_fTimer > m_fDayLength * 7 / 8)
@@ -301,7 +298,7 @@ public class CGameManager : MonoBehaviour
         int iNumSpawned = 0, iNumTries = 0;
         while (iNumSpawned < iNumToSpawn && iNumTries < MAX_NUM_TRIES)
         {
-            Vector3 spawnPoint = m_player.transform.position + Random.insideUnitSphere * fSpawnRadius;
+            Vector3 spawnPoint = m_player.transform.position + new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
             if (!Physics.CheckSphere(spawnPoint, 1) && spawnPoint.y < -3)
             {
                 m_skrypers[iNumSpawned] = Instantiate(m_skryperPrefab, spawnPoint, Quaternion.identity);
