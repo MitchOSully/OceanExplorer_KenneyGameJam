@@ -299,7 +299,9 @@ public class CGameManager : MonoBehaviour
         while (iNumSpawned < iNumToSpawn && iNumTries < MAX_NUM_TRIES)
         {
             Vector3 spawnPoint = m_player.transform.position + new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
-            if (!Physics.CheckSphere(spawnPoint, 1) && spawnPoint.y < -3)
+            if (!Physics.CheckSphere(spawnPoint, 1) && 
+                spawnPoint.y < -3 && spawnPoint.y > -18 && 
+                spawnPoint.x > -7 && spawnPoint.x < 43)
             {
                 m_skrypers[iNumSpawned] = Instantiate(m_skryperPrefab, spawnPoint, Quaternion.identity);
                 m_skrypers[iNumSpawned].GetComponent<CKillPlayerOnTrigger>().m_gameManager = this;
