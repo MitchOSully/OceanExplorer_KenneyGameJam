@@ -1852,8 +1852,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206548994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.763, y: -1.21, z: 0}
-  m_LocalScale: {x: 2.93, y: 2.92, z: 1}
+  m_LocalPosition: {x: -10.31, y: -1.21, z: 0}
+  m_LocalScale: {x: 1.16, y: 2.92, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3237,6 +3237,7 @@ MonoBehaviour:
   m_dialogManager: {fileID: 324577537}
   m_alivePlayerSprite: {fileID: -1564412532, guid: 3a53a06e1926b334aa17760b97b5772e, type: 3}
   m_deadPlayerSprite: {fileID: 21300000, guid: da01fa51e1b9a644fbb4549297b06c32, type: 3}
+  m_talkingPlayerSprite: {fileID: 932600090, guid: 3a53a06e1926b334aa17760b97b5772e, type: 3}
   m_scoreText: {fileID: 1083340084}
   m_clockImage: {fileID: 1705873187}
   m_fDayLength: 60

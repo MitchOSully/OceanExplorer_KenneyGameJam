@@ -12,7 +12,7 @@ public class CGameManager : MonoBehaviour
     public GameObject m_canvas;
     public GameObject m_dialogManager;
 
-    public Sprite m_alivePlayerSprite, m_deadPlayerSprite;
+    public Sprite m_alivePlayerSprite, m_deadPlayerSprite, m_talkingPlayerSprite;
 
     public TextMeshProUGUI m_scoreText;
 
@@ -63,6 +63,8 @@ public class CGameManager : MonoBehaviour
         {
             treasure.GetComponent<CCollectible>().m_gameManager = this;
         }
+
+        IncreaseScore(0); //This will update the text for us
     }
 
     void Update()
@@ -84,13 +86,7 @@ public class CGameManager : MonoBehaviour
 
         if (!m_bTimePaused)
         {
-            m_fTimer += Time.deltaTime;
-            UpdateClock();
-            DarkenScene();
-            if (m_fTimer > m_fDayLength && !m_bSkrypersActive)
-            {
-                SpawnSkrypers(10, 10);
-            }
+            ProgressTime();
         }
     }
 
@@ -101,7 +97,7 @@ public class CGameManager : MonoBehaviour
     public void IncreaseScore(int iInc = 1)
     {
         m_iScore += iInc;
-        m_scoreText.SetText("Treasures Found: " + m_iScore);
+        m_scoreText.SetText("Treasures Found: " + m_iScore + "/" + m_treasures.Length);
         if (m_iScore >= m_treasures.Length)
         {
             DisplayAllTreasuresFoundMessage();
@@ -117,6 +113,7 @@ public class CGameManager : MonoBehaviour
     public void TalkToDad()
     {
         m_bTimePaused = true;
+        m_player.GetComponent<SpriteRenderer>().sprite = m_talkingPlayerSprite;
         DisableControls();
         if (m_iScore == m_treasures.Length)
         {
@@ -133,12 +130,16 @@ public class CGameManager : MonoBehaviour
         m_bTimePaused = false;
         if (m_iScore == m_treasures.Length)
         {
+            RestartTime();
+            ProgressTime();
+            m_bTimePaused = true;
             GameOver(m_sGameOverWinMsg);
         }
         else
         {
             EnableLandControls();
         }
+        m_player.GetComponent<SpriteRenderer>().sprite = m_alivePlayerSprite;
     }
 
     public void KillPlayer()
@@ -160,6 +161,17 @@ public class CGameManager : MonoBehaviour
     }
 
     /// /////////////////////////PRIVATES////////////////////////////////
+
+    private void ProgressTime()
+    {
+        m_fTimer += Time.deltaTime;
+        UpdateClock();
+        DarkenScene();
+        if (m_fTimer > m_fDayLength && !m_bSkrypersActive)
+        {
+            SpawnSkrypers(10, 10);
+        }
+    }
 
     private void DisableControls()
     {
@@ -223,7 +235,7 @@ public class CGameManager : MonoBehaviour
     private void RespawnPlayer()
     {
         //m_player.transform.position = new Vector3(0.64f, -1.36f, 0); //On the jetty
-        m_player.transform.position = new Vector3(-10.2f, -1.559f, 0); //Next to dad
+        m_player.transform.position = new Vector3(-12.03f, -1.559f, 0); //Next to dad
         m_player.transform.rotation = Quaternion.identity;
 
         m_player.GetComponent<SpriteRenderer>().sprite = m_alivePlayerSprite;

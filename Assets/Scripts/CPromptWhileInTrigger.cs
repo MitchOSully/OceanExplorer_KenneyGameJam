@@ -25,7 +25,7 @@ public class CPromptWhileInTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            m_bInsideTrigger= false;
+            m_bInsideTrigger = false;
             m_prompt.SetActive(false);
         }
     }
@@ -43,6 +43,15 @@ public class CPromptWhileInTrigger : MonoBehaviour
         if (m_bInsideTrigger && !m_bDialogueActive && Input.GetKeyUp(KeyCode.E))
         {
             m_action.Invoke();
+        }
+
+        if (m_bDialogueActive)
+        {
+            m_prompt.SetActive(false);
+        }
+        else if (m_bInsideTrigger)
+        {
+            m_prompt.SetActive(true);
         }
     }
 }
