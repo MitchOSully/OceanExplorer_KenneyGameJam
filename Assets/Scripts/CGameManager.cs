@@ -26,6 +26,7 @@ public class CGameManager : MonoBehaviour
     private GameObject[] m_treasures;
 
     private float m_fTimer = 0;
+    private bool m_bGoingToBed = false;
 
     private void Start()
     {
@@ -76,16 +77,8 @@ public class CGameManager : MonoBehaviour
 
     public void GoToBed()
     {
-        //1. Turn off controls
-        m_playerControllerLand.enabled = false;
-        //2. Turn player to face door
-        //3. Fade scene to black
-        //4. Restart time
-        RestartTime();
-        //5. Put player back in starting position
-        RestartPosition();
-        //6. Turn controls back on
-        m_playerControllerLand.enabled = true;
+        m_bGoingToBed = true;
+        StartCoroutine(GoToBed(1, 0.5f, 0.25f));
     }
 
     public void TalkToDad()
@@ -94,6 +87,40 @@ public class CGameManager : MonoBehaviour
     }
 
     /// /////////////////////////PRIVATES////////////////////////////////
+
+    private IEnumerator GoToBed(float fFadeOutTime, float fBlackTime, float fFadeInTime)
+    {
+        //1. Turn off controls
+        m_playerControllerLand.enabled = false;
+        //2. Turn player to face door
+        //3. Fade scene to black
+        Color OGColor = m_darkness.color;
+        for (float t = 0; t < fFadeOutTime; t += Time.deltaTime)
+        {
+            m_darkness.color = Color.Lerp(OGColor, Color.black, Mathf.Min(1, t/fFadeOutTime));
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        //4. Stay black for a little while
+        for (float t = 0; t < fBlackTime; t += Time.deltaTime)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        //5. Restart time
+        RestartTime();
+        //6. Put player back in starting position
+        RestartPosition();
+        //7. Fade scene back in
+        OGColor = m_darkness.color;
+        for (float t = 0; t < fFadeInTime; t += Time.deltaTime)
+        {
+            m_darkness.color = Color.Lerp(Color.black, Color.clear, Mathf.Min(1, t/fFadeInTime));
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        //8. Turn controls back on
+        m_playerControllerLand.enabled = true;
+
+        m_bGoingToBed = false;
+    }
 
     private void RestartTime()
     {
@@ -106,6 +133,7 @@ public class CGameManager : MonoBehaviour
     {
         //m_player.transform.position = new Vector3(0.64f, -1.36f, 0); //On the jetty
         m_player.transform.position = new Vector3(-10.2f, -1.559f, 0); //Next to dad
+        m_player.transform.rotation = Quaternion.identity;
     }
 
     private void UpdateClock()
@@ -147,12 +175,15 @@ public class CGameManager : MonoBehaviour
 
     private void DarkenScene()
     {
-        //Make it darker in the last half of the day
-        float fFraction = 0.5f;
-        if (m_fDayLength * fFraction < m_fTimer && m_fTimer < m_fDayLength)
+        if (!m_bGoingToBed)
         {
-            float fAlpha = m_fMaxDarkness * (m_fTimer - m_fDayLength * fFraction) / (m_fDayLength * (1 - fFraction));
-            m_darkness.color = new Color(0, 0, 0, fAlpha);
+            //Make it darker in the last half of the day
+            float fFraction = 0.5f;
+            if (m_fDayLength * fFraction < m_fTimer && m_fTimer < m_fDayLength)
+            {
+                float fAlpha = m_fMaxDarkness * (m_fTimer - m_fDayLength * fFraction) / (m_fDayLength * (1 - fFraction));
+                m_darkness.color = new Color(0, 0, 0, fAlpha);
+            }
         }
     }
 
