@@ -21107,6 +21107,7 @@ MonoBehaviour:
   m_player: {fileID: 1687399967}
   m_canvas: {fileID: 11265148}
   m_dialogManager: {fileID: 324577537}
+  m_camera: {fileID: 519420031}
   m_scoreText: {fileID: 1083340084}
   m_clockImage: {fileID: 1705873187}
   m_fDayLength: 60

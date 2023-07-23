@@ -11,6 +11,7 @@ public class CGameManager : MonoBehaviour
     public GameObject m_player;
     public GameObject m_canvas;
     public GameObject m_dialogManager;
+    public Camera m_camera;
 
     public TextMeshProUGUI m_scoreText;
 
@@ -298,9 +299,9 @@ public class CGameManager : MonoBehaviour
         int iNumSpawned = 0, iNumTries = 0;
         while (iNumSpawned < iNumToSpawn && iNumTries < MAX_NUM_TRIES)
         {
-            Vector3 spawnPoint = m_player.transform.position + new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
-            if (!Physics.CheckSphere(spawnPoint, 1) && 
-                spawnPoint.y < -3 && spawnPoint.y > -18 && 
+            Vector3 spawnPoint = m_player.transform.position + Random.insideUnitSphere * fSpawnRadius;
+            if (!Physics.CheckSphere(spawnPoint, 1) && OutsideView(spawnPoint) &&
+                spawnPoint.y < -3 && spawnPoint.y > -18 &&
                 spawnPoint.x > -7 && spawnPoint.x < 43)
             {
                 m_skrypers[iNumSpawned] = Instantiate(m_skryperPrefab, spawnPoint, Quaternion.identity);
@@ -315,6 +316,12 @@ public class CGameManager : MonoBehaviour
         //{
             m_bSkrypersActive = true;
         //}
+    }
+
+    private bool OutsideView(Vector3 point)
+    {
+        Vector3 viewPoint = m_camera.WorldToViewportPoint(point);
+        return viewPoint.y < 0 || viewPoint.y > 1 || viewPoint.x < 0 || viewPoint.x > 1;
     }
 
     private void DestroySkrypers()
