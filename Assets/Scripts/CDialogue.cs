@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class CDialogue 
 {
+    public string m_sName;
     [TextArea(3, 10)]
     public string[] m_aSentences;
-    public string m_sName;
 }

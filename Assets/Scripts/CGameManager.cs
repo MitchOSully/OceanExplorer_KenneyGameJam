@@ -29,6 +29,8 @@ public class CGameManager : MonoBehaviour
 
     public GameObject m_allTreasuresFoundMessage;
 
+    public CDialogue[] m_dadDialogues;
+
     /// ////////////////PRIVATES//////////////////////////
 
     private TarodevController.PlayerController m_playerControllerLand;
@@ -107,22 +109,29 @@ public class CGameManager : MonoBehaviour
         StartCoroutine(GoToBed(1, 0.5f, 0.25f));
     }
 
-    public void TalkToDad(CDialogue dialogue)
+    public void TalkToDad()
     {
         DisableControls();
+        if (m_iScore == m_treasures.Length)
+        {
+            m_dialogManager.GetComponent<CDialogueManager>().StartDialogue(m_dadDialogues[m_dadDialogues.Length-1]);
+        }
+        else
+        {
+            m_dialogManager.GetComponent<CDialogueManager>().StartDialogue(m_dadDialogues[0]);
+        }
+    }
+
+    public void FinishTalking()
+    {
         if (m_iScore == m_treasures.Length)
         {
             GameOver(m_sGameOverWinMsg);
         }
         else
         {
-            m_dialogManager.GetComponent<CDialogueManager>().StartDialogue(dialogue);
+            EnableLandControls();
         }
-    }
-
-    public void FinishTalking()
-    {
-        EnableLandControls();
     }
 
     public void KillPlayer()

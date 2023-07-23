@@ -1790,7 +1790,6 @@ GameObject:
   - component: {fileID: 206548996}
   - component: {fileID: 206548995}
   - component: {fileID: 206548998}
-  - component: {fileID: 206548999}
   m_Layer: 0
   m_Name: TalkToDadTrigger
   m_TagString: Untagged
@@ -1876,9 +1875,9 @@ MonoBehaviour:
   m_action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 206548999}
-        m_TargetAssemblyTypeName: CDialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialog
+      - m_Target: {fileID: 1007934198}
+        m_TargetAssemblyTypeName: CGameManager, Assembly-CSharp
+        m_MethodName: TalkToDad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1888,35 +1887,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &206548999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206548994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9446cfa5e6b7a42a20252a7f899118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dialogue:
-    m_aSentences:
-    - Son. Our coffee shop, Seaside Joe, is in financial jeapordy.
-    - It is time to put your trusty diving helmet to use. There are treasures in
-      the ocean that are worth more than a simple cup of Joe. You must venture beneath
-      the waves to find them.
-    - 'Be warned - the ocean at night is a dangerous place. Strange creatures are
-      known to emerge that show divers no mercy. '
-    - Make sure to be back before sundown each night, sleep it off and continue your
-      search the next day. I want you keeping track of the time with the clock in
-      the top-right corner.
-    - Oh, and each time you return, there is a good chance I will have information
-      for you about the locations of other treasures, based on rumours I have heard
-      in the shop.
-    - Now go. Descend into the ocean. Find as many treasures as you can, and bring
-      them back here to save Seaside Joe.
-    m_sName: Dad
 --- !u!1 &279588328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,6 +3254,26 @@ MonoBehaviour:
   m_gameOverPanel: {fileID: 284255172}
   m_gameOverText: {fileID: 496091501}
   m_allTreasuresFoundMessage: {fileID: 4702218105753784434, guid: 8c4097d4fd8b44b42a2aaf08fcdadeab, type: 3}
+  m_dadDialogues:
+  - m_sName: Dad
+    m_aSentences:
+    - Son. Our coffee shop, Seaside Joe, is in financial jeopardy.
+    - It is time to put your trusty diving helmet to use. There are treasures in
+      the ocean that are worth more than a simple cup of Joe. You must venture beneath
+      the waves to find them.
+    - Be warned - the ocean at night is a dangerous place. Strange creatures are
+      known to emerge that show divers no mercy.
+    - Make sure to be back before sundown each night, sleep it off and continue your
+      search the next day. I want you keeping track of the time with the clock in
+      the top-right corner.
+    - Oh, and each time you return, there is a good chance I will have information
+      for you about the locations of other treasures, based on rumours I have heard
+      in the shop.
+    - Now go. Descend into the ocean. Find as many treasures as you can, and bring
+      them back here to save Seaside Joe.
+  - m_sName: Dad
+    m_aSentences:
+    - Well done, son. I knew you could do it.
 --- !u!4 &1007934199
 Transform:
   m_ObjectHideFlags: 0
@@ -32626,7 +32616,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
