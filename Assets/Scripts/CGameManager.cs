@@ -282,10 +282,10 @@ public class CGameManager : MonoBehaviour
         if (!m_bGoingToBed)
         {
             //Make it darker in the last half of the day
-            float fFraction = 0.5f;
-            if (m_fDayLength * fFraction < m_fTimer && m_fTimer < m_fDayLength)
+            float fDayFraction = 0.5f;
+            if (m_fDayLength * fDayFraction < m_fTimer && m_fTimer < m_fDayLength)
             {
-                float fAlpha = m_fMaxDarkness * (m_fTimer - m_fDayLength * fFraction) / (m_fDayLength * (1 - fFraction));
+                float fAlpha = m_fMaxDarkness * (m_fTimer - m_fDayLength * fDayFraction) / (m_fDayLength * (1 - fDayFraction));
                 m_darkness.color = new Color(0, 0, 0, fAlpha);
             }
         }
