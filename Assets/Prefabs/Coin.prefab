@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 0}
+  m_collectParticlePrefab: {fileID: 604814555479782490, guid: 385a98c9ddbff6043951a1e0d9745318, type: 3}
 --- !u!58 &4672355387641030497
 CircleCollider2D:
   m_ObjectHideFlags: 0
