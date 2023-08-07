@@ -21,7 +21,7 @@ namespace TarodevController {
 
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
-        private bool m_bRightButtonPressed = false;
+        public CPhoneControls m_phoneControls;// = new CPhoneControls();
 
         // This is horrible, but for some reason colliders are not fully established when update starts...
         private bool _active;
@@ -47,17 +47,12 @@ namespace TarodevController {
 
 
         #region Gather Input
-
-        public void MoveRightButtonDown()
-        {
-            m_bRightButtonPressed = true;
-        }
-
         private void GatherInput() {
+            Debug.Log(m_phoneControls.m_moveVector);
             Input = new FrameInput {
                 JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
                 JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
-                X = m_bRightButtonPressed ? 1 : 0, //UnityEngine.Input.GetAxisRaw("Horizontal"),
+                X = m_phoneControls.m_moveVector.x, //UnityEngine.Input.GetAxisRaw("Horizontal"),
                 Y = UnityEngine.Input.GetAxisRaw("Vertical")
             };
             if (Input.JumpDown) {
