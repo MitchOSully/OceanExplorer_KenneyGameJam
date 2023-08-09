@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 604814555479782468}
   - component: {fileID: 604814555479782469}
   m_Layer: 0
-  m_Name: CollectParticle
+  m_Name: TresshorCollectParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,8 +222,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.9960785, g: 0.8941177, b: 0.5058824, a: 1}
-      maxColor: {r: 1, g: 0.8000001, b: 0, a: 1}
+      minColor: {r: 1, g: 0.87843144, b: 0.61960787, a: 1}
+      maxColor: {r: 0.91372555, g: 0.43137258, b: 0.23529413, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
