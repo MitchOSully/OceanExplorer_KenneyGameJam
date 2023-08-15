@@ -23,8 +23,10 @@ public class CGameManager : MonoBehaviour
 
     public GameObject m_skryperPrefab;
 
+    //Screen stuff
     public GameObject m_gameOverPanel;
     public TextMeshProUGUI m_gameOverText;
+    public GameObject m_phoneControlsPanel;
 
     public GameObject m_allTreasuresFoundMessage;
 
@@ -157,6 +159,18 @@ public class CGameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void TogglePhoneControls()
+    {
+        if (m_phoneControlsPanel.activeSelf)
+        {
+            m_phoneControlsPanel.SetActive(false);
+        }
+        else
+        {
+            m_phoneControlsPanel.SetActive(true);
+        }
     }
 
     /// /////////////////////////PRIVATES////////////////////////////////

@@ -19,9 +19,13 @@ namespace TarodevController {
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
 
+        //----------Mitchell's patch---------------
+        public CPhoneControls m_phoneControls;
+        private bool m_bPhoneControlsActive = false;
+        //-----------------------------------------
+
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
-        public CPhoneControls m_phoneControls;// = new CPhoneControls();
 
         // This is horrible, but for some reason colliders are not fully established when update starts...
         private bool _active;
@@ -48,13 +52,27 @@ namespace TarodevController {
 
         #region Gather Input
         private void GatherInput() {
-            Debug.Log(m_phoneControls.m_moveVector);
-            Input = new FrameInput {
-                JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
-                JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
-                X = UnityEngine.Input.GetAxisRaw("Horizontal"), //m_phoneControls.m_moveVector.x
-                Y = UnityEngine.Input.GetAxisRaw("Vertical")
-            };
+            if (m_bPhoneControlsActive)
+            {
+                Input = new FrameInput
+                {
+                    JumpDown = m_phoneControls.m_bJumpDown,
+                    JumpUp = m_phoneControls.m_bJumpUp,
+                    X = m_phoneControls.m_moveVector.x,
+                    Y = m_phoneControls.m_moveVector.y //Y does nothing :)
+                };
+            }
+            else
+            {
+                Input = new FrameInput 
+                {
+                    JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
+                    JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
+                    X = UnityEngine.Input.GetAxisRaw("Horizontal"),
+                    Y = UnityEngine.Input.GetAxisRaw("Vertical")
+                };
+            }
+
             if (Input.JumpDown) {
                 _lastJumpPressed = Time.time;
             }
@@ -298,6 +316,13 @@ namespace TarodevController {
             }
         }
 
+        #endregion
+
+        #region Mitchell's Patch
+        public void TogglePhoneControls()
+        {
+            m_bPhoneControlsActive = !m_bPhoneControlsActive;
+        }
         #endregion
     }
 }

@@ -3,13 +3,24 @@ using UnityEngine.InputSystem;
 
 public class CPhoneControls : MonoBehaviour
 {
+    [System.NonSerialized]
     public Vector2 m_moveVector = Vector2.zero;
+    [System.NonSerialized]
+    public bool m_bJumpDown = false; //Set to true by CJumpButon
+    [System.NonSerialized]
+    public bool m_bJumpUp = false; //Set to true by CJumpButton
 
     private InputActions m_input = null;
     
     private void Awake()
     {
         m_input = new InputActions();
+    }
+
+    private void LateUpdate()
+    {
+        m_bJumpDown = false;
+        m_bJumpUp = false;
     }
 
     private void OnEnable()
