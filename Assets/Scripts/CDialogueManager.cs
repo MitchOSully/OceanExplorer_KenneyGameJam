@@ -26,6 +26,7 @@ public class CDialogueManager : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Escape))
         {
+            //To Do
             Debug.Log("Exiting conversation");
         }
         if (m_bDialogueActive && RightArrowUp())
