@@ -69,7 +69,7 @@ namespace TarodevController {
                     JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
                     JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
                     X = UnityEngine.Input.GetAxisRaw("Horizontal"),
-                    Y = UnityEngine.Input.GetAxisRaw("Vertical")
+                    Y = UnityEngine.Input.GetAxisRaw("Vertical") //Y does nothing :)
                 };
             }
 

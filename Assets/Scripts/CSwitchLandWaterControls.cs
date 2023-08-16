@@ -5,6 +5,7 @@ using UnityEngine;
 public class CSwitchLandWaterControls : MonoBehaviour
 {
     public GameObject m_player;
+    public GameObject m_jumpButton;
 
     private TarodevController.PlayerController      m_playerControllerLand;
     private TarodevController.PlayerControllerWater m_playerControllerWater;
@@ -36,14 +37,26 @@ public class CSwitchLandWaterControls : MonoBehaviour
             //     A better method should be used in the future to ensure it NEVER fails. But this is good enough for now
             if (fExitYPos > m_fEnterYPos + fTolerance)
             {
-                m_playerControllerLand.enabled = true;
-                m_playerControllerWater.enabled = false;
+                ActivateLandControls();
             }
             else if (fExitYPos < m_fEnterYPos - fTolerance)
             {
-                m_playerControllerLand.enabled = false;
-                m_playerControllerWater.enabled = true;
+                ActivateWaterControls();
             }
         }
+    }
+
+    private void ActivateLandControls()
+    {
+        m_playerControllerLand.enabled = true;
+        m_playerControllerWater.enabled = false;
+        m_jumpButton.SetActive(true);
+    }
+
+    private void ActivateWaterControls()
+    {
+        m_playerControllerLand.enabled = false;
+        m_playerControllerWater.enabled = true;
+        m_jumpButton.SetActive(false);
     }
 }

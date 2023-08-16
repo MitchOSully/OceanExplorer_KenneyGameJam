@@ -18,6 +18,11 @@ namespace TarodevController {
         public bool LandingThisFrame { get; private set; }
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
+        
+        //----------Mitchell's patch---------------
+        public CPhoneControls m_phoneControls;
+        private bool m_bPhoneControlsActive = false;
+        //-----------------------------------------
 
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
@@ -44,12 +49,27 @@ namespace TarodevController {
         #region Gather Input
 
         private void GatherInput() {
-            Input = new FrameInput {
-                JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
-                JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
-                X = UnityEngine.Input.GetAxisRaw("Horizontal"),
-                Y = UnityEngine.Input.GetAxisRaw("Vertical")
-            };
+            if (m_bPhoneControlsActive)
+            {
+                Input = new FrameInput
+                {
+                    JumpDown = m_phoneControls.m_bJumpDown, //Jump does nothing :)
+                    JumpUp = m_phoneControls.m_bJumpUp, //Jump does nothing :)
+                    X = m_phoneControls.m_moveVector.x,
+                    Y = m_phoneControls.m_moveVector.y
+                };
+            }
+            else
+            {
+                Input = new FrameInput 
+                {
+                    JumpDown = UnityEngine.Input.GetButtonDown("Jump"), //Jump does nothing :)
+                    JumpUp = UnityEngine.Input.GetButtonUp("Jump"), //Jump does nothing :)
+                    X = UnityEngine.Input.GetAxisRaw("Horizontal"),
+                    Y = UnityEngine.Input.GetAxisRaw("Vertical")
+                };
+            }
+
             if (Input.JumpDown) {
                 _lastJumpPressed = Time.time;
             }
@@ -314,6 +334,13 @@ namespace TarodevController {
             }
         }
 
+        #endregion
+        
+        #region Mitchell's Patch
+        public void TogglePhoneControls()
+        {
+            m_bPhoneControlsActive = !m_bPhoneControlsActive;
+        }
         #endregion
     }
 }

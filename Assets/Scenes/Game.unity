@@ -3703,6 +3703,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1687399976}
+        m_TargetAssemblyTypeName: TarodevController.PlayerControllerWater, Assembly-CSharp
+        m_MethodName: TogglePhoneControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &684324060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48852,6 +48864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_player: {fileID: 1687399967}
+  m_jumpButton: {fileID: 1860629039}
 --- !u!66 &1163563042
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -53520,6 +53533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cadf065b69031b43b3324fa31be2ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_phoneControls: {fileID: 1687399983}
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.3, y: 0.4, z: 0}
