@@ -265,8 +265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -162.87, y: 155}
-  m_SizeDelta: {x: 194.26, y: 194.26}
+  m_AnchoredPosition: {x: -290, y: 290}
+  m_SizeDelta: {x: 395.0673, y: 395.0673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49117843
 MonoBehaviour:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 50
+  m_MovementRange: 100
   m_ControlPath: <Gamepad>/rightStick
 --- !u!114 &49117844
 MonoBehaviour:
@@ -3788,8 +3788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -162.87, y: 155}
-  m_SizeDelta: {x: 270, y: 270}
+  m_AnchoredPosition: {x: -290, y: 290}
+  m_SizeDelta: {x: 540, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747770870
 MonoBehaviour:
@@ -56371,8 +56371,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 162.87, y: 155}
-  m_SizeDelta: {x: 194.26001, y: 194.26}
+  m_AnchoredPosition: {x: 290, y: 290}
+  m_SizeDelta: {x: 395, y: 395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860629042
 MonoBehaviour:
