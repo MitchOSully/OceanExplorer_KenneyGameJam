@@ -13,26 +13,31 @@ public class CPlayerAnimator : MonoBehaviour
 
     private void Update()
     {
+        //Obtain relevant info from controller scripts
+        float fHorizontalInput = 0;
         float fHorizontalVelocity = 0;
         if (m_playerControllerLand.enabled)
         {
-            fHorizontalVelocity = m_playerControllerLand.Velocity.x;
+            fHorizontalInput = m_playerControllerLand.Input.X;
+            fHorizontalVelocity = m_playerControllerLand.Velocity.x;    
         }
         else if (m_playerControllerWater.enabled)
         {
+            fHorizontalInput = m_playerControllerWater.Input.X;
             fHorizontalVelocity = m_playerControllerWater.Velocity.x;
         }
-
+        
         //Make player face in the correct direction
-        if (fHorizontalVelocity > 0.01f) //Facing right
+        if (fHorizontalInput > 0.01f) //Facing right
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (fHorizontalVelocity < -0.01f || m_bIsTalking) //Facing left
+        else if (fHorizontalInput < -0.01f || m_bIsTalking) //Facing left
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
+        //Set animation parameters
         m_animator.SetFloat("Speed", Mathf.Abs(fHorizontalVelocity));
         m_animator.SetBool("IsJumping", m_playerControllerLand.enabled && !m_playerControllerLand.Grounded);
         m_animator.SetBool("IsSwimming", !m_playerControllerLand.enabled && m_playerControllerWater.enabled);
