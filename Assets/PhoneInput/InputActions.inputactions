@@ -39,7 +39,7 @@
                 {
                     "name": "up",
                     "id": "4620a822-eb06-4aa9-87c8-f16b891e1dce",
-                    "path": "<Gamepad>/rightStick/up",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -50,7 +50,7 @@
                 {
                     "name": "down",
                     "id": "ff3c13ce-8d63-4020-85b0-152ee3050e9a",
-                    "path": "<Gamepad>/rightStick/down",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -61,7 +61,7 @@
                 {
                     "name": "left",
                     "id": "6a5111e2-c36f-4829-9c99-ea96d4646949",
-                    "path": "<Gamepad>/rightStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -72,7 +72,7 @@
                 {
                     "name": "right",
                     "id": "a6d01ee3-f2e5-4f9a-8c54-c7ebfbcd134d",
-                    "path": "<Gamepad>/rightStick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -83,7 +83,7 @@
                 {
                     "name": "",
                     "id": "50c72b26-162d-4849-8a12-1039c30495d5",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
