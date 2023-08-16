@@ -52,6 +52,8 @@ public class CGameManager : MonoBehaviour
     private string m_sGameOverDeathMsg = "You stayed out too late and became fish food. Your father will be heartbroken.";
     private string m_sGameOverWinMsg = "Congratulations! Thanks to your aquatic ventures, Seaside Joe will stay in business. Your father is proud.";
 
+    private bool m_bPhoneControlsActive = false;
+
     private void Start()
     {
         //Initialise two playercontrollers
@@ -165,10 +167,12 @@ public class CGameManager : MonoBehaviour
     {
         if (m_phoneControlsPanel.activeSelf)
         {
+            m_bPhoneControlsActive = false;
             m_phoneControlsPanel.SetActive(false);
         }
         else
         {
+            m_bPhoneControlsActive = true;
             m_phoneControlsPanel.SetActive(true);
         }
     }
@@ -190,11 +194,19 @@ public class CGameManager : MonoBehaviour
     {
         m_playerControllerLand.enabled = false;
         m_playerControllerWater.enabled = false;
+        if (m_bPhoneControlsActive)
+        {
+            m_phoneControlsPanel.SetActive(false); //Take phone controls off screen while controls are disabled
+        }
     }
     private void EnableLandControls()
     {
         m_playerControllerLand.enabled = true;
         m_playerControllerWater.enabled = false;
+        if (m_bPhoneControlsActive)
+        {
+            m_phoneControlsPanel.SetActive(true); //If phone controls should be on screen, put them back on screen
+        }
     }
     private void EnableWaterControls()
     {
