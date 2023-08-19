@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 285576758928714113}
   - component: {fileID: 643643110850906563}
   - component: {fileID: 4672355387641030497}
-  - component: {fileID: 4209987263595624439}
   m_Layer: 0
   m_Name: Tresshor
   m_TagString: Treasure
@@ -65,26 +64,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.29
---- !u!95 &4209987263595624439
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960901919104288287}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 439d1531b0f2f45448739df2a2950859, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9201065907475197799
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +76,7 @@ GameObject:
   - component: {fileID: 7853558393698063440}
   - component: {fileID: 8625979582906561698}
   m_Layer: 0
-  m_Name: Coin GFX
+  m_Name: Tresshor GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
