@@ -74,7 +74,7 @@ public class CDialogueManager : MonoBehaviour
         foreach(char cLetter in sSentence.ToCharArray())
         {
             m_dialogueText.text += cLetter;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSeconds(0.03f);
         }
     }
 
