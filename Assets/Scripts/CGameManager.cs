@@ -331,7 +331,6 @@ public class CGameManager : MonoBehaviour
                 spawnPoint.x > -7 && spawnPoint.x < 43)
             {
                 m_skrypers[iNumSpawned] = Instantiate(m_skryperPrefab, spawnPoint, Quaternion.identity);
-                m_skrypers[iNumSpawned].transform.localScale = Vector3.one * 5;
                 m_skrypers[iNumSpawned].GetComponent<CKillPlayerOnTrigger>().m_gameManager = this;
                 m_skrypers[iNumSpawned].GetComponent<AIDestinationSetter>().target = m_player.transform;
                 iNumSpawned++;

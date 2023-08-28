@@ -7,6 +7,8 @@ public class CEnemyGFX : MonoBehaviour
 {
     public AIPath m_aiPath;
 
+    private const float GFX_SCALE = 5f;
+
     void Update()
     {
         Vector3 aiVelocity = m_aiPath.desiredVelocity;
@@ -14,7 +16,7 @@ public class CEnemyGFX : MonoBehaviour
         if (aiVelocity.x >= 0.01f) //moving to right
         {
             //Flip
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-GFX_SCALE, GFX_SCALE, GFX_SCALE);
 
             //Rotate
             float fZAngle = Vector3.Angle(Vector3.right, aiVelocity);
@@ -27,7 +29,7 @@ public class CEnemyGFX : MonoBehaviour
         else if (aiVelocity.x <= -0.01f) //moving left
         {
             //Flip
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(GFX_SCALE, GFX_SCALE, GFX_SCALE);
             
             //Rotate
             float fZAngle = Vector3.Angle(Vector3.left, aiVelocity);
