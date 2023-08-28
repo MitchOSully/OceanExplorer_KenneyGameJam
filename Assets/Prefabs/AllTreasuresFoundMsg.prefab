@@ -161,8 +161,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You found the last treasure! Take it back to Seaside Joe and save the shop!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
-  m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
+  m_sharedMaterial: {fileID: -2764498550326355111, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

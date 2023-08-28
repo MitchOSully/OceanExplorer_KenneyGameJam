@@ -393,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75899879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.5, y: -5.49, z: 0.58085054}
+  m_LocalPosition: {x: -17.49, y: -5.49, z: 0.58085054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -437,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -137}
+  m_AnchoredPosition: {x: 180, y: -150}
   m_SizeDelta: {x: 285, y: 73.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &96986038
@@ -2390,8 +2390,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 185.5}
-  m_SizeDelta: {x: 760, y: 181}
+  m_AnchoredPosition: {x: 0, y: 195.7}
+  m_SizeDelta: {x: 760, y: 203.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &284282505 stripped
 Transform:
@@ -2437,7 +2437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -72.644775, y: 36.23107}
+  m_AnchoredPosition: {x: -72.644775, y: 46}
   m_SizeDelta: {x: 106.4701, y: 61.6424}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &290000831
@@ -2921,8 +2921,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dad
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
-  m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
+  m_sharedMaterial: {fileID: -2764498550326355111, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2946,8 +2946,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.4
-  m_fontSizeBase: 50.4
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3057,8 +3057,8 @@ MonoBehaviour:
   m_text: Congratulations! Thanks to your aquatic ventures, Seaside Joe will stay
     in business. Your father is proud.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
-  m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
+  m_sharedMaterial: {fileID: -2764498550326355111, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3121,7 +3121,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &496091502
@@ -3192,8 +3192,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
-  m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
+  m_sharedMaterial: {fileID: -2764498550326355111, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3217,8 +3217,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.6
-  m_fontSizeBase: 59.6
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4099,10 +4099,10 @@ MonoBehaviour:
       the ocean that are worth more than a simple cup of Joe. You must venture beneath
       the waves to find them.
     - Be warned - the ocean at night is a dangerous place. Strange creatures are
-      known to emerge that show divers no mercy.
-    - Make sure to be back before sundown each night, sleep it off and continue your
-      search the next day. I want you keeping track of the time with the clock in
-      the top-right corner.
+      known to emerge that show no mercy.
+    - I want you keeping track of the time with the clock in the top-right corner.
+      Be back before sundown each night, sleep it off and continue your search the
+      next day.
     - Now go. Descend into the ocean. Find as many treasures as you can, and bring
       them back here to save Seaside Joe.
   - m_sName: Dad
@@ -27783,8 +27783,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -29.9517}
-  m_SizeDelta: {x: 639.95874, y: 59.9035}
+  m_AnchoredPosition: {x: -0.0000085831, y: -40}
+  m_SizeDelta: {x: 996.3842, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083340084
 MonoBehaviour:
@@ -27806,10 +27806,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Treasures found: 0'
+  m_text: 'Treasures found: 0/8'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
-  m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
+  m_sharedMaterial: {fileID: -2764498550326355111, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -51754,7 +51754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: -137}
+  m_AnchoredPosition: {x: -180, y: -150}
   m_SizeDelta: {x: 285, y: 73.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186826081
@@ -51998,7 +51998,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Go to bed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -52062,7 +52062,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1289140672
@@ -52118,7 +52118,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -166.79}
-  m_SizeDelta: {x: -254, y: 222.57999}
+  m_SizeDelta: {x: -254, y: 264.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341141543
 MonoBehaviour:
@@ -52548,8 +52548,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13.299988, y: -9.754999}
-  m_SizeDelta: {x: -126.599976, y: -124.28999}
+  m_AnchoredPosition: {x: -13.299988, y: -26.705}
+  m_SizeDelta: {x: -126.599976, y: -158.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511162096
 MonoBehaviour:
@@ -52575,8 +52575,8 @@ MonoBehaviour:
     in the ocean that are worth more than a simple cup of Joe. You must venture beneath
     the waves to find them.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
-  m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
+  m_sharedMaterial: {fileID: -2764498550326355111, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -52600,8 +52600,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.39
-  m_fontSizeBase: 29.39
+  m_fontSize: 35.32
+  m_fontSizeBase: 35.32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -56193,8 +56193,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play Again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
-  m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
+  m_sharedMaterial: {fileID: -2764498550326355111, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -56218,8 +56218,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.6
-  m_fontSizeBase: 59.6
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -56328,7 +56328,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Talk to Dad
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b221a0be6bd0d44bbd8817f01340e08, type: 2}
   m_sharedMaterial: {fileID: -9161817149146363625, guid: 5672e3450a39dab48af58078fa5f3cb7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -56392,7 +56392,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1817752626
