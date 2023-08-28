@@ -4086,7 +4086,7 @@ MonoBehaviour:
   m_oclock1030: {fileID: -1683199831, guid: 262aa1b9b2ef2634aa7b905d21d11b76, type: 3}
   m_darkness: {fileID: 279588329}
   m_fMaxDarkness: 0.7
-  m_skryperPrefab: {fileID: 820815887804997536, guid: 45ce6cb30cf21364fb81b2bca52677b9, type: 3}
+  m_skryperPrefab: {fileID: 820815887804997536, guid: 720f72ade7fbafa4fbf52419b52a2b79, type: 3}
   m_gameOverPanel: {fileID: 284255172}
   m_gameOverText: {fileID: 496091501}
   m_phoneControlsPanel: {fileID: 931302094}
