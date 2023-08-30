@@ -7,7 +7,7 @@ public class CEnemyGFX : MonoBehaviour
 {
     public AIPath m_aiPath;
 
-    private const float GFX_SCALE = 5f;
+    private const float GFX_SCALE = 1.5f;
 
     void Update()
     {
