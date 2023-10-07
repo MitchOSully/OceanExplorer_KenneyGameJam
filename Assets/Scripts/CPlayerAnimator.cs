@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CPlayerAnimator : MonoBehaviour
 {
-    public TarodevController.PlayerController m_playerControllerLand;
-    public TarodevController.PlayerControllerWater m_playerControllerWater;
+    public TarodevController.CJoePlayerController m_playerController;
     public Animator m_animator;
 
     [System.NonSerialized]
@@ -14,18 +13,8 @@ public class CPlayerAnimator : MonoBehaviour
     private void Update()
     {
         //Obtain relevant info from controller scripts
-        float fHorizontalInput = 0;
-        float fHorizontalVelocity = 0;
-        if (m_playerControllerLand.enabled)
-        {
-            fHorizontalInput = m_playerControllerLand.Input.X;
-            fHorizontalVelocity = m_playerControllerLand.Velocity.x;    
-        }
-        else if (m_playerControllerWater.enabled)
-        {
-            fHorizontalInput = m_playerControllerWater.Input.X;
-            fHorizontalVelocity = m_playerControllerWater.Velocity.x;
-        }
+        float fHorizontalInput = m_playerController.Input.X;
+        float fHorizontalVelocity = m_playerController.Velocity.x;    
         
         //Make player face in the correct direction
         if (fHorizontalInput > 0.01f) //Facing right
@@ -39,8 +28,8 @@ public class CPlayerAnimator : MonoBehaviour
 
         //Set animation parameters
         m_animator.SetFloat("Speed", Mathf.Abs(fHorizontalVelocity));
-        m_animator.SetBool("IsJumping", m_playerControllerLand.enabled && !m_playerControllerLand.Grounded);
-        m_animator.SetBool("IsSwimming", !m_playerControllerLand.enabled && m_playerControllerWater.enabled);
+        m_animator.SetBool("IsJumping", !m_playerController.IsUnderwater() && !m_playerController.Grounded);
+        m_animator.SetBool("IsSwimming", m_playerController.IsUnderwater());
         m_animator.SetBool("IsTalking", m_bIsTalking);
         m_animator.SetBool("IsDead", m_bIsDead);
     }

@@ -7,14 +7,12 @@ public class CSwitchLandWaterControls : MonoBehaviour
     public GameObject m_player;
     public GameObject m_jumpButton;
 
-    private TarodevController.PlayerController      m_playerControllerLand;
-    private TarodevController.PlayerControllerWater m_playerControllerWater;
+    private TarodevController.CJoePlayerController m_playerController;
     private float m_fEnterYPos;
 
     private void Start()
     {
-        m_playerControllerLand = m_player.GetComponent<TarodevController.PlayerController>();
-        m_playerControllerWater = m_player.GetComponent<TarodevController.PlayerControllerWater>();
+        m_playerController = m_player.GetComponent<TarodevController.CJoePlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,15 +46,13 @@ public class CSwitchLandWaterControls : MonoBehaviour
 
     private void ActivateLandControls()
     {
-        m_playerControllerLand.enabled = true;
-        m_playerControllerWater.enabled = false;
+        m_playerController.ActivateLandControls();
         m_jumpButton.SetActive(true);
     }
 
     private void ActivateWaterControls()
     {
-        m_playerControllerLand.enabled = false;
-        m_playerControllerWater.enabled = true;
+        m_playerController.ActivateWaterControls();
         m_jumpButton.SetActive(false);
     }
 }

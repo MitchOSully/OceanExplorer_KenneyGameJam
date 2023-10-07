@@ -3696,7 +3696,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1687399975}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TarodevController.PlayerController, Assembly-CSharp
         m_MethodName: TogglePhoneControls
         m_Mode: 1
@@ -3708,7 +3708,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1687399976}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TarodevController.PlayerControllerWater, Assembly-CSharp
         m_MethodName: TogglePhoneControls
         m_Mode: 1
@@ -53474,8 +53474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687399971}
   - component: {fileID: 1687399970}
-  - component: {fileID: 1687399975}
-  - component: {fileID: 1687399976}
+  - component: {fileID: 1687399984}
   - component: {fileID: 1687399978}
   - component: {fileID: 1687399979}
   - component: {fileID: 1687399981}
@@ -53555,76 +53554,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1687399975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687399967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9865f4e52c41c474eaea388ff250f983, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_phoneControls: {fileID: 1687399983}
-  _characterBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.3, y: 0.4, z: 0}
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _detectorCount: 3
-  _detectionRayLength: 0.1
-  _rayBuffer: 0.1
-  _acceleration: 90
-  _moveClamp: 6
-  _deAcceleration: 60
-  _apexBonus: 2
-  _fallClamp: -20
-  _minFallSpeed: 80
-  _maxFallSpeed: 120
-  _jumpHeight: 15
-  _jumpApexThreshold: 0
-  _coyoteTimeThreshold: 0.1
-  _jumpBuffer: 0.1
-  _jumpEndEarlyGravityModifier: 1
-  _freeColliderIterations: 10
---- !u!114 &1687399976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687399967}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cadf065b69031b43b3324fa31be2ef5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_phoneControls: {fileID: 1687399983}
-  _characterBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.3, y: 0.4, z: 0}
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _detectorCount: 3
-  _detectionRayLength: 0.1
-  _rayBuffer: 0.1
-  _acceleration: 10
-  _moveClamp: 5
-  _deAcceleration: 5
-  _apexBonus: 2
-  _fallClamp: -5
-  _minFallSpeed: 0
-  _maxFallSpeed: 10
-  _jumpHeight: 12
-  _jumpApexThreshold: 0
-  _coyoteTimeThreshold: 0.1
-  _jumpBuffer: 0.1
-  _jumpEndEarlyGravityModifier: 1
-  _freeColliderIterations: 10
 --- !u!50 &1687399978
 Rigidbody2D:
   serializedVersion: 4
@@ -53704,8 +53633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a7a892c3ff79d4eb048f0ad1ed6aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerControllerLand: {fileID: 1687399975}
-  m_playerControllerWater: {fileID: 1687399976}
+  m_playerController: {fileID: 1687399984}
   m_animator: {fileID: 1687399981}
 --- !u!114 &1687399983
 MonoBehaviour:
@@ -53719,6 +53647,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def6b75a12904104a845fc1f4a779183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1687399984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687399967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f8f958c1606ef46972045a9d29f5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_phoneControls: {fileID: 1687399983}
+  _characterBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.3, y: 0.4, z: 0}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _detectorCount: 3
+  _detectionRayLength: 0.1
+  _rayBuffer: 0.1
+  _acceleration: 90
+  _moveClamp: 6
+  _deAcceleration: 60
+  _apexBonus: 2
+  _fallClamp: -20
+  _minFallSpeed: 80
+  _maxFallSpeed: 120
+  _jumpHeight: 15
+  _jumpApexThreshold: 0
+  _coyoteTimeThreshold: 0.1
+  _jumpBuffer: 0.1
+  _jumpEndEarlyGravityModifier: 1
+  _freeColliderIterations: 10
 --- !u!1 &1704523460
 GameObject:
   m_ObjectHideFlags: 0

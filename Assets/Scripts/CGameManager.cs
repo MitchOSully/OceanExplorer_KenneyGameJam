@@ -37,8 +37,7 @@ public class CGameManager : MonoBehaviour
 
     /// ////////////////PRIVATES//////////////////////////
 
-    private TarodevController.PlayerController m_playerControllerLand;
-    private TarodevController.PlayerControllerWater m_playerControllerWater;
+    private TarodevController.CJoePlayerController m_playerController;
 
     private int m_iScore = 0;
     private GameObject[] m_treasures;
@@ -57,8 +56,7 @@ public class CGameManager : MonoBehaviour
     private void Start()
     {
         //Initialise two playercontrollers
-        m_playerControllerLand = m_player.GetComponent<TarodevController.PlayerController>();
-        m_playerControllerWater = m_player.GetComponent<TarodevController.PlayerControllerWater>();
+        m_playerController = m_player.GetComponent<TarodevController.CJoePlayerController>();
 
         //Assign 'this' to each treasure in scene
         m_treasures = GameObject.FindGameObjectsWithTag("Treasure");
@@ -77,8 +75,7 @@ public class CGameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             RespawnPlayer();
-            m_playerControllerLand.enabled = true;
-            m_playerControllerWater.enabled = false;
+            EnableLandControls();
             RestartTime();
         }
         else if (Input.GetKeyUp(KeyCode.X))
@@ -192,8 +189,7 @@ public class CGameManager : MonoBehaviour
 
     private void DisableControls()
     {
-        m_playerControllerLand.enabled = false;
-        m_playerControllerWater.enabled = false;
+        m_playerController.enabled = false;
         if (m_bPhoneControlsActive)
         {
             m_phoneControlsPanel.SetActive(false); //Take phone controls off screen while controls are disabled
@@ -201,8 +197,8 @@ public class CGameManager : MonoBehaviour
     }
     private void EnableLandControls()
     {
-        m_playerControllerLand.enabled = true;
-        m_playerControllerWater.enabled = false;
+        m_playerController.enabled = true;
+        m_playerController.ActivateLandControls();
         if (m_bPhoneControlsActive)
         {
             m_phoneControlsPanel.SetActive(true); //If phone controls should be on screen, put them back on screen
@@ -210,8 +206,8 @@ public class CGameManager : MonoBehaviour
     }
     private void EnableWaterControls()
     {
-        m_playerControllerWater.enabled = true;
-        m_playerControllerLand.enabled = false;
+        m_playerController.enabled = true;
+        m_playerController.ActivateWaterControls();
     }
 
     private IEnumerator GoToBed(float fFadeOutTime, float fBlackTime, float fFadeInTime)
