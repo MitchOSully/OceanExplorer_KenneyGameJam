@@ -28,8 +28,8 @@ public class CPlayerAnimator : MonoBehaviour
 
         //Set animation parameters
         m_animator.SetFloat("Speed", Mathf.Abs(fHorizontalVelocity));
-        m_animator.SetBool("IsJumping", !m_playerController.IsUnderwater() && !m_playerController.Grounded);
-        m_animator.SetBool("IsSwimming", m_playerController.IsUnderwater());
+        m_animator.SetBool("IsJumping", m_playerController.enabled && !m_playerController.IsUnderwater() && !m_playerController.Grounded);
+        m_animator.SetBool("IsSwimming", m_playerController.enabled && m_playerController.IsUnderwater());
         m_animator.SetBool("IsTalking", m_bIsTalking);
         m_animator.SetBool("IsDead", m_bIsDead);
     }
