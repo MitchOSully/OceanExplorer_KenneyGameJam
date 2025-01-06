@@ -53940,7 +53940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775c16cd547e2c84d870e43586f0155a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_walkClips:
+  m_sandWalkClips:
   - {fileID: 8300000, guid: 5e8c1b9667a37ae4f9429c022ba09a03, type: 3}
   - {fileID: 8300000, guid: a8d44b13aa1db6f4c8350443361372cb, type: 3}
 --- !u!82 &1687399986
