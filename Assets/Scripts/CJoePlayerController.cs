@@ -22,7 +22,7 @@ namespace TarodevController
         public bool Grounded => _colDown;
 
         //----------Mitchell's patch---------------
-        private bool m_bUnderwater = false; //Central switch of this script. If true, land controls. If false, water controls.
+        public bool m_bUnderwater = false; //Central switch of this script. If true, land controls. If false, water controls.
         
         public CPhoneControls m_phoneControls;
         private bool m_bPhoneControlsActive = false;
